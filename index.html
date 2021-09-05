@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
     <!-- <audio autoplay controls>
         <source src="/media/audio/Childish Gambino - Baby Boy.mp3" type="audio/mpeg">
     </audio> -->
@@ -14,8 +15,11 @@
 </head>
 
 <body class="main-bg">
-    <h1>Aye yo</h1>
-    <h2 style="font-weight: bold;">Playground is the place for me to try my hands in front-end development.</h2>
+    <div style="font-style: italic;">
+        <h1>Aye yo</h1>
+        <h2>Playground is the place for me to try my hands in front-end development.</h2>
+    </div>
+    <h1 class="name animated-underline">Tortrakul Wonglieng</h1>
     <!-- <input type="button" id="succBtn" value="PLAY" onclick="play()"> -->
 </body>
 
@@ -32,13 +36,45 @@
     .main-bg {
         font-family: 'Montserrat', sans-serif;
         background-color: aquamarine;
-        font-style: italic;
         text-align: center;
-        animation: mymove 3s infinite alternate;
+        animation: alter-color 3s infinite alternate;
         
     }
+    .name {
+        font-family: 'IBM Plex Mono', monospace;
+        text-align: start;
+        margin-left: 1em;
+    }
+    .animated-underline {
+        display: inline-block;
+        position: relative;
+    }
+    .animated-underline::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-in-out;
+    }
+    .animated-underline:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    .grayscale {
+        filter: grayscale(1);
+    }
+    .always-bottom-element {
+        position: fixed;
+        bottom: 0px;
+        margin: 0 auto;
+    }
 
-    @keyframes mymove {
+    @keyframes alter-color {
   from {background-color: aquamarine;}
   to {background-color: antiquewhite;}
 }
